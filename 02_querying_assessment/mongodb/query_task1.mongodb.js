@@ -18,9 +18,9 @@
 //
 // Your thinking:
 // Interpreted the task : Owner need name of item menu that priced < $10.00
-// what data you need : menu item's name, menu item's price
-// which table(s) are involved : MenuItems
-// What SQL concepts you plan to use : find price<10 from menu_items's table
+// what data you need : menu item name, menu item price
+// which table(s) are involved : menu_items
+// What MongoDB concepts you plan to use : find price<10 from menu_items's table
 
 use("chrome-burger-db");
 

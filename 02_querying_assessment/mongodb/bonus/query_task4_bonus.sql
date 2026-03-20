@@ -17,4 +17,10 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- Interpreted the task : the owner wants financial summary report (total_revenue)
+-- what data you need :  total_price
+-- which table(s) are involved : Orders
+-- What SQL concepts you plan to use : use SUM total_price from Orders table, use AS to change the name
+
+SELECT SUM(total_price) AS total_revenue
+FROM  Orders;

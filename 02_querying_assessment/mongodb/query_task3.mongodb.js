@@ -20,7 +20,7 @@
 // Interpreted the task : the manager need a list of every ingredient with a stock level of 100 or more
 // what data you need : name and stock_level
 // which table(s) are involved : ingredients
-// What SQL concepts you plan to use :
+// What MongoDB concepts you plan to use :
 // 1. use $gte for find >= 100
 // 2. use 0 / 1 to show only name and stock level
 

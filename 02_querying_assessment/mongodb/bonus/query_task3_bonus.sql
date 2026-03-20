@@ -17,4 +17,10 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- Interpreted the task : the manager need a list of every ingredient with a stock level of 100 or more
+-- what data you need : name and stock_level
+-- which table(s) are involved : Ingredients
+-- What SQL concepts you plan to use : find stock_level >= 100 from Ingredients table
+
+SELECT name, stock_level FROM Ingredients
+WHERE stock_level >= 100 ;

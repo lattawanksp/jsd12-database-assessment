@@ -18,10 +18,10 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-// Interpreted the task : manager wants to see when each order was placed and what it was worth
+// Interpreted the task : the manager wants to see when each order was placed and what it was worth
 // what data you need : Jane Doe's order (just order placed, order worth)
 // which table(s) are involved : orders
-// What SQL concepts you plan to use :
+// What MongoDB concepts you plan to use :
 // 1. use dot notation to see the filed name in the staff table
 // 2. use 0 / 1 to show only order placed and order worth
 

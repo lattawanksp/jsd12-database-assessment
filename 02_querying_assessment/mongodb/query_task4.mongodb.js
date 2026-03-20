@@ -21,7 +21,7 @@
 // Interpreted the task : the owner wants financial summary report (total_revenue)
 // what data you need : total_price
 // which table(s) are involved : orders
-// What SQL concepts you plan to use :
+// What MongoDB concepts you plan to use :
 // 1. use aggregate for calculate
 // 2. use $group / _id : null (all data is combined into a single group)
 // 3. use $sum $total_price AS total_revenue

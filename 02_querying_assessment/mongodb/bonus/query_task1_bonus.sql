@@ -17,4 +17,10 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- Interpreted the task : Owner need name of item menu that priced < $10.00
+-- what data you need : menu item name, menu item price
+-- which table(s) are involved : menu_items
+-- What SQL concepts you plan to use : find price<10 from menu_items table
+
+SELECT name, price FROM MenuItems
+WHERE price < 10 ;

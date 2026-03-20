@@ -18,4 +18,15 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+-- Interpreted the task : the manager wants to see when each order was placed and what it was worth
+-- what data you need : Jane Doe's order (just order placed, order worth)
+-- which table(s) are involved : orders, staff
+-- What SQL concepts you plan to use : 
+-- 1. Find only order_date and total_price
+-- 2. Join to table that staff_id needs to match.
+-- 3. Then filter for Staff where first name = 'Jane'.
+
+SELECT Orders.order_date, Orders.total_price
+FROM Orders
+JOIN Staff ON Orders.staff_id = Staff.staff_id
+WHERE first_name = 'Jane';
