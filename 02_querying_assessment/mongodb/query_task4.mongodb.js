@@ -18,4 +18,28 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// Interpreted the task : the owner wants financial summary report (total_revenue)
+// what data you need : total_price
+// which table(s) are involved : orders
+// What SQL concepts you plan to use :
+// 1. use aggregate for calculate
+// 2. use $group / _id : null (all data is combined into a single group)
+// 3. use $sum $total_price AS total_revenue
+// 4. use $project for show only total_revenue
+
+use("chrome-burger-db");
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: null,
+      total_revenue: { $sum: "$total_price" },
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      total_revenue: 1,
+    },
+  },
+]);

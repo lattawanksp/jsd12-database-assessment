@@ -24,4 +24,4 @@
 
 use("chrome-burger-db");
 
-db.menu_items.find({ price: { $lt: 10 } }, { name: 1 });
+db.menu_items.find({ price: { $lt: 10 } }, { name: 1, _id: 0 });
