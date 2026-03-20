@@ -23,7 +23,7 @@
 // what data you need : ingredients name, supplier_id name, supplier_id,
 // which table(s) are involved : ingredients, suppliers
 // What MongoDB concepts you plan to use :
-// ข้อนี้ทำไม่ได้ ใช้ AI ช่วยหาคำตอบ และคำอธิบายแต่ละ stage ค่ะ
+// ข้อนี้ยังไม่รู้ค่ะ ใช้ AI ช่วยหาคำตอบ และคำอธิบายแต่ละ stage
 
 use("chrome-burger-db");
 
