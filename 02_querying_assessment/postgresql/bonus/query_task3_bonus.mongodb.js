@@ -20,7 +20,7 @@
 //
 // Your thinking:
 // Interpreted the task : the owner wants to see how many orders each staff member has processed, and the busiest staff member appearing at the top of the list.
-// what data you need : staff name, count ObjectId (?)
+// what data you need : staff name, sum total order
 // which table(s) are involved : orders
 // What MongoDB concepts you plan to use : 0.อึ้งส์ก่อน
 // 1. จัดกลุ่ม เอา $group มาเก็บข้อมูลแบบ 1 document = 1 order

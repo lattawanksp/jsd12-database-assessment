@@ -19,4 +19,42 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+// Interpreted the task : The manager need to know which ingredients depend on 'Freshest Farm Produce' supplier.
+// what data you need : ingredients name, supplier_id name, supplier_id,
+// which table(s) are involved : ingredients, suppliers
+// What MongoDB concepts you plan to use :
+// ข้อนี้ทำไม่ได้ ใช้ AI ช่วยหาคำตอบ และคำอธิบายแต่ละ stage ค่ะ
+
+use("chrome-burger-db");
+
+db.ingredients.aggregate([
+  // Stage 1: join กับตาราง suppliers
+  {
+    $lookup: {
+      //LEFT JOIN โดย default
+      from: "suppliers",
+      localField: "supplier_id", //อันนี้เหมือน ON ใช้ key อะไรเชื่อมกัน
+      foreignField: "_id", //เอา supplier_id ของ ingredients ไปหาให้ตรงกับ _id ของ suppliers
+      as: "supplierInfo",
+    },
+  },
+  // Stage 2: แกะ array ออก ($lookup ให้ผลเป็น array มาเสมอ → $unwind แกะออก → แล้ว $match ถึงจะกรองได้)
+  {
+    $unwind: "$supplierInfo",
+  },
+  // Stage 3: กรองเฉพาะ Freshest Farm Produce
+  {
+    $match: {
+      //match ทำหน้าที่เหมือน WHERE
+      "supplierInfo.name": "Freshest Farm Produce",
+    },
+  },
+  // Stage 4: แสดงแค่ชื่อ ingredient
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      "supplierInfo.name": 1, //ใส่""ด้วยเพราะ JS จะได้รู้ว่าเป็น key เดียวกัน
+    },
+  },
+]);
